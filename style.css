@@ -1,0 +1,340 @@
+:root {
+    --primary-color: #1A1A19;
+    --secondary-color: #16202C;
+    --background-color: #192A44;
+    --text-color: white;
+    --card-background: #7d7c7c;
+    --hover-color: #759AB4;
+    --font-size-base: 16px;
+    --border-radius: 12px;
+    --section-alt-background: #87683f;
+}
+
+*{
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+@font-face {
+    font-family: 'MinecraftFont';
+    src: url("font/minecraftfont.ttf") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'MinecraftFont', cursive, sans-serif;
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu {
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu.show {
+    display: block;
+}
+
+.navbar.minecraft-theme {
+    background-color: var(--primary-color);
+    padding: 20px 10%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar .logo span {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin-left: auto;
+}
+
+.navbar .menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.navbar .menu li a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+section {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+section:nth-child(even) {
+    background-color: var(--section-alt-background);
+}
+
+.home-background {
+    background: url('minecraftshader.bg.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-bottom: none;
+}
+
+.home-content h1 {
+    font-size: clamp(2.5em, 5vw, 4.5em);
+    margin: 10px 0;
+}
+
+.about {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+
+.about .img1 {
+    width: 300px;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s;
+}
+
+.about .img1:hover {
+    transform: scale(1.1);
+}
+
+.teksabout{
+        max-width: 600px;
+        line-height: 1.6; 
+        word-wrap: break-word;
+        margin: 0 auto;
+        text-align: justify;
+}
+
+#skills {
+    background: url('bookshelf_bg.jpg') no-repeat center center/cover;
+    padding: 100px 15%;
+}
+
+.progress {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 10px;
+    margin-bottom: 10px;
+}
+.progress-fill {
+    height: 100%;
+    background-color:var(--secondary-color);
+    border-radius: 5px;
+}
+
+
+#skills h2 {
+    text-align: center;
+    margin: 50px 0;
+    font-size: clamp(1.8em, 4vw, 3em);
+    color: var(--text-color);
+    border-bottom: 4px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+#skills ul li {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#skills ul li:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transform: translateY(-8px);
+}
+
+.portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.project {
+    border: 3px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--card-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+}
+
+.project p {
+    padding: 15px;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+.teksproject_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none; 
+    color: inherit;
+    padding: 10px;
+}
+
+
+#contact {
+    text-align: center;
+    padding: 200px 0;
+    background: url('footer_bg.jpg') no-repeat center center/cover;
+
+}
+
+.social-media a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--hover-color);
+    transform: scale(1.2);
+}
+
+footer {
+    text-align: center;
+    padding: 25px 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 0.9em;
+    border-top: 4px solid var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        position: relative;
+    }
+
+    .navbar .menu {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .navbar .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--text-color);
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    
+    }
+    .portfolio-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: clamp(2em, 4vw, 3em);
+    }
+
+    #skills ul {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .social-media a {
+        font-size: 1.2em;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: clamp(2em, 4vw, 3em);
+    }
+
+    #skills ul {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .social-media a {
+        font-size: 1.2em;
+    }
+}
